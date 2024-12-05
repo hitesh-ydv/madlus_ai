@@ -1,8 +1,32 @@
+/* Default Light Theme */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --user-message-bg: #e0e0e0;
+    --bot-message-bg: #f1f1f1;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --background-color: #181818;
+    --text-color: #ffffff;
+    --user-message-bg: #282828;
+    --bot-message-bg: #383838;
+    --button-bg: #444444;
+    --button-text: #ffffff;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f3f3f3;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .chat-container {
@@ -47,11 +71,13 @@ body {
     display: inline-block;
     padding: 10px;
     border-radius: 8px;
+    background-color: var(--bot-message-bg);
+    color: var(--text-color);
 }
 
 .user-message span {
-    background-color: #DCF8C6;
-    color: #000;
+    background-color: var(--user-message-bg);
+    color: var(--text-color);
 }
 
 .bot-message span {
@@ -138,5 +164,54 @@ b {
     }
     40% {
         transform: scale(1);
+    }
+}
+
+
+#theme-toggle-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle-btn:hover {
+    opacity: 0.9;
+}
+
+/* Bot Code Block Container */
+.code-block pre {
+    background-color: #282c34;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin: 10px 0;
+}
+
+.code-block {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Add shimmer effect for skeleton */
+.skeleton {
+    animation: shimmer 1.5s infinite linear;
+    background: linear-gradient(90deg, #f3f3f3 25%, #e2e2e2 50%, #f3f3f3 75%);
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
     }
 }

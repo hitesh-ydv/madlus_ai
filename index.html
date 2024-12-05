@@ -10,6 +10,9 @@
     <div class="chat-container">
         <div class="chat-header">
             <h2>Madlus AI</h2>
+            <div id="theme-toggle-container">
+                <button id="theme-toggle-btn">Switch to Dark Mode</button>
+            </div>            
         </div>
         <div class="chat-messages" id="chat-messages">
             <!-- Messages will be appended here -->
@@ -19,6 +22,14 @@
             <button id="send-btn">Send</button>
         </div>
     </div>
+    <!-- Include TailwindCSS with DaisyUI -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        plugins: [require('daisyui')],
+    };
+</script>
+
     <script src="script.js"></script>
 </body>
 </html>
